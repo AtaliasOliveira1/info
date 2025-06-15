@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EPD3Y2KSJ7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-EPD3Y2KSJ7');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atalias - Linkfour</title>
+    <link rel="icon" href="https://i.postimg.cc/SKB3JNj0/icons8-user-male-skin-type-7-96.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+        }
+        
+        .link-card {
+            transition: all 0.3s ease;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .link-card:hover::before {
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .link-card span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .logo-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+        }
+        
+        .logo-container::before {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            background: linear-gradient(45deg, #00dbde, #fc00ff, #00dbde, #fc00ff);
+            background-size: 400%;
+            border-radius: 50%;
+            z-index: -1;
+            animation: animate-border 8s linear infinite;
+        }
+        
+        @keyframes animate-border {
+            0% {
+                background-position: 0 0;
+            }
+            50% {
+                background-position: 300% 0;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+    </style>
+</head>
+<body class="text-white">
+    <div class="container mx-auto px-4 py-8 max-w-3xl">
+        <div class="glass-effect rounded-2xl p-8 shadow-xl">
+            <!-- Profile Section -->
+            <div class="flex flex-col items-center mb-8">
+                <div class="logo-container rounded-full mb-4">
+                <img src="https://i.postimg.cc/KvQBpkDf/PERFIL-PROFISSIONAL.png" alt="Logo" class="w-full h-full object-cover rounded-full border-4 border-white">
+                </div>
+                
+                <h1 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 bg-clip-text text-transparent mb-2">
+                    Atalias Lô-Amí
+                </h1>
+                
+                <div class="text-lg text-gray-300 mb-4">24 Anos</div>
+                
+                <div class="text-center mb-6">
+                    <div class="inline-flex items-center space-x-2 bg-gray-800 rounded-full px-4 py-2 mb-2">
+                        <i class="fas fa-palette text-purple-400"></i>
+                        <span>Designer Gráfico</span>
+                    </div>
+                    <div class="inline-flex items-center space-x-2 bg-gray-800 rounded-full px-4 py-2 mb-2 mx-2">
+                        <i class="fas fa-film text-blue-400"></i>
+                        <span>Motion Design</span>
+                    </div>
+                    <div class="inline-flex items-center space-x-2 bg-gray-800 rounded-full px-4 py-2 mb-2">
+                        <i class="fas fa-cube text-green-400"></i>
+                        <span>Modelador 3D</span>
+                    </div>
+                </div>
+                
+                <p class="text-center text-gray-300 mb-4">
+                    👨‍💻 Atualmente, conhecendo o deslumbrante mundo da programação.
+                </p>
+                
+                <div class="bg-gradient-to-r from-purple-500 to-blue-500 p-0.5 rounded-full mb-4">
+                    <div class="bg-gray-900 rounded-full px-6 py-2 text-center">
+                        <b>Dono do melhor bot de figurinhas do WhatsApp</b>
+                    </div>
+                </div>
+                
+                <p class="text-center text-gray-300">
+                    Conheça o Bender clicando abaixo, o melhor bot de figurinhas e gerenciamento dos seus grupos do WhatsApp que já existiu.
+                </p>
+            </div>
+            
+            <!-- Links Section -->
+            <div class="grid gap-4">
+                <a href="https://wa.me/554531981832" class="link-card h-20 rounded-xl flex items-center justify-center font-semibold text-lg" style="background-image: url('./assets/fotos/bender.png');" target="_blank">
+                    <span class="flex items-center space-x-2">
+                        <i class="fab fa-whatsapp text-green-400"></i>
+                        <span>WHATSAPP BENDER</span>
+                    </span>
+                </a>
+                
+                <a href="https://wa.me/559984691168" class="link-card h-20 rounded-xl flex items-center justify-center font-semibold text-lg" style="background-image: url('.');" target="_blank">
+                    <span class="flex items-center space-x-2">
+                        <i class="fab fa-whatsapp text-green-400"></i>
+                        <span>MEU WHATSAPP</span>
+                    </span>
+                </a>
+                
+                <a href="https://www.freepik.com/author/ataliaslo-ami" class="link-card h-20 rounded-xl flex items-center justify-center font-semibold text-lg" style="background-image: url('./assets/fotos/freepik.webp');" target="_blank">
+                    <span class="flex items-center space-x-2">
+                        <i class="fas fa-images text-blue-400"></i>
+                        <span>Meu Trabalho (Imagens)</span>
+                    </span>
+                </a>
+
+                <div class="bg-[#1f1f2e] border border-[#3b3b52] rounded-xl p-4 text-center mt-6 shadow-md">
+  <p class="text-lg font-semibold text-white mb-2">
+    🧾 Precisa de um <span class="text-purple-400">QR Code gratuito e permanente?</span>
+  </p>
+  <p class="text-sm text-gray-300 mb-4">
+    Crie o seu agora mesmo com um clique, sem complicação e sem expiração. Perfeito para WhatsApp, redes sociais e muito mais!
+  </p>
+  <a href="#" onclick="
+    fetch('https://trigger.macrodroid.com/abf899bb-77cd-43ac-ae3d-0ca96aa77c94/CliqueQrCode')
+      .finally(() => window.open('https://qr.loami.shop', '_blank'))"
+   class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full transition duration-300">
+   Criar QR Code Agora
+</a>
+</div>
+
+        <!-- Social Links -->
+        <div class="flex justify-center space-x-4 mt-8">
+            <a href="https://www.instagram.com/loami.psd/" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-purple-500 transition-colors">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/atalias.oliveira/" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-500 transition-colors">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://discord.com/users/318751511863754752
+" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-500 transition-colors">
+                <i class="fab fa-discord"></i>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
