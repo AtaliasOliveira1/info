@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Motion Design & Design Gráfico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Efeitos personalizados */
+        .project-card:hover .project-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .project-overlay {
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .hero-video {
+            mix-blend-mode: screen;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans">
+    <!-- Cursor personalizado -->
+    <div class="fixed w-8 h-8 rounded-full bg-white mix-blend-difference pointer-events-none transform -translate-x-1/2 -translate-y-1/2 z-50" id="custom-cursor"></div>
+
+    <!-- Navegação -->
+    <nav class="fixed w-full z-40 backdrop-blur-md bg-gray-900/80 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-xl font-bold text-gradient">Atalias Lô-Amí</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="px-3 py-2 text-sm font-medium hover:text-blue-400 transition">Início</a>
+                        <a href="#work" class="px-3 py-2 text-sm font-medium hover:text-blue-400 transition">Trabalhos</a>
+                        <a href="#about" class="px-3 py-2 text-sm font-medium hover:text-blue-400 transition">Sobre</a>
+                        <a href="#services" class="px-3 py-2 text-sm font-medium hover:text-blue-400 transition">Serviços</a>
+                        <a href="#contact" class="px-3 py-2 text-sm font-medium hover:text-blue-400 transition">Contato</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Menu mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/95 backdrop-blur-lg pb-4 px-4">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-base font-medium hover:bg-gray-800 rounded-md">Início</a>
+                <a href="#work" class="block px-3 py-2 text-base font-medium hover:bg-gray-800 rounded-md">Trabalhos</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium hover:bg-gray-800 rounded-md">Sobre</a>
+                <a href="#services" class="block px-3 py-2 text-base font-medium hover:bg-gray-800 rounded-md">Serviços</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium hover:bg-gray-800 rounded-md">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-blue-900/20 to-gray-900 z-10"></div>
+        <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover z-0">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-motion-design-loop-36905-large.mp4" type="video/mp4">
+        </video>
+        
+        <div class="relative z-20 text-center px-4 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-gradient">CRIATIVIDADE EM <span class="block md:inline">MOVIMENTO</span></h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8">Transformando ideias em experiências visuais impressionantes através de motion design e design gráfico.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#work" class="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full font-medium hover:opacity-90 transition transform hover:scale-105">Ver Portfólio</a>
+                <a href="#contact" class="px-8 py-3 border border-gray-600 rounded-full font-medium hover:bg-gray-800/50 transition transform hover:scale-105">Fale Comigo</a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20">
+            <div class="animate-bounce">
+                <i class="fas fa-chevron-down text-2xl text-gray-400"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Trabalhos -->
+    <section id="work" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">MEUS <span class="text-gradient">TRABALHOS</span></h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">Uma seleção dos meus projetos mais recentes de motion design e design gráfico.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projeto 1 -->
+                <div class="project-card rounded-xl overflow-hidden shadow-lg" data-category="motion">
+    <div class="aspect-w-16 aspect-h-9">
+        <iframe class="w-full h-full" src="https://www.youtube.com/embed/SMmZt3PtHSM" title="Abertura EU + 1" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="bg-gray-800 p-4">
+        <h3 class="font-bold text-lg text-white">Abertura EU + 1</h3>
+        <p class="text-gray-300 text-sm">Motion feita para telao led.</p>
+        <div class="flex space-x-3 mt-3">
+            <span class="px-3 py-1 bg-gray-700 rounded-full text-sm text-white">After Effects</span>
+            <span class="px-3 py-1 bg-gray-700 rounded-full text-sm text-white">Cinema 4D</span>
+        </div>
+    </div>
+</div>
+
+                <div class="project-card rounded-xl overflow-hidden shadow-lg" data-category="motion">
+    <div class="aspect-w-16 aspect-h-9">
+<iframe class="w-full h-full" src="https://www.youtube.com/embed/ur1mR1Iwaxs" title="Apresentação Camisa EU + 1" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="bg-gray-800 p-4">
+        <h3 class="font-bold text-lg text-white">Apresentação Camisa EU + 1</h3>
+        <p class="text-gray-300 text-sm">Camisa apresentada em 3D.</p>
+        <div class="flex space-x-3 mt-3">
+            <span class="px-3 py-1 bg-gray-700 rounded-full text-sm text-white">Cinema 4D</span>
+            <span class="px-3 py-1 bg-gray-700 rounded-full text-sm text-white">Premiere</span>
+            
+        </div>
+    </div>
+</div>
+
+<div class="project-card rounded-xl overflow-hidden shadow-lg" data-category="motion">
+    <div class="aspect-w-16 aspect-h-9">
+<iframe class="w-full h-full" src="https://www.youtube.com/embed/vxj4LkJ4MF0" title="Countdown EU + 1" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="bg-gray-800 p-4">
+        <h3 class="font-bold text-lg text-white">Countdown EU + 1</h3>
+        <p class="text-gray-300 text-sm">Contagem regressiva para inicio do evento.</p>
+        <div class="flex space-x-3 mt-3">
+            <span class="px-3 py-1 bg-gray-700 rounded-full text-sm text-white">After Effects</span> 
+        </div>
+    </div>
+</div>
+
+
+
+                
+              <!-- Projeto 2: Slide Automático -->
+<div class="project-card relative rounded-xl overflow-hidden group w-full h-64">
+  <div class="relative w-full h-full">
+    <div id="carousel-images" class="w-full h-full relative">
+      <img src="https://i.postimg.cc/q7d14GTp/487504145-3484223401712505-6074679530862312057-n.jpg"
+           class="w-full h-full object-cover absolute inset-0 opacity-100 transition-opacity duration-700">
+      <img src="https://i.postimg.cc/qMzbLRwH/487514386-3484223428379169-2035835094574274377-n.jpg"
+           class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700">
+      <img src="https://i.postimg.cc/8cCyxPVW/487103713-3484223538379158-6744892569478725349-n.jpg"
+           class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700">          
+    <img src="https://i.postimg.cc/VvH7wQYh/487186653-3484223588379153-7880306315459695048-n.jpg"
+           class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700">
+           <img src="https://i.postimg.cc/ydspXyQL/486836543-3484223528379159-6748575529315211464-n.jpg"
+           class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700">
+    </div>
+
+    <!-- Overlay de conteúdo -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent p-6 flex flex-col justify-end
+                opacity-0 group-hover:opacity-100 transition-opacity duration-500">      <h3 class="text-2xl font-bold mb-2 text-white">Identidade Visual</h3>
+      <p class="text-gray-300 mb-4">Criação de marca completa para startup de tecnologia.</p>
+      <div class="flex space-x-3">
+        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-white">Illustrator</span>
+        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-white">Photoshop</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+              <!-- Projeto 2: Slide Automático -->
+<div class="project-card relative rounded-xl overflow-hidden group w-full h-64">
+  <div class="relative w-full h-full">
+    <div id="carousel-images2" class="w-full h-full relative">
+      <img src="https://i.postimg.cc/8k3BTbRx/04.jpg"
+           class="w-full h-full object-cover absolute inset-0 opacity-100 transition-opacity duration-700">
+      <img src="https://i.postimg.cc/zvLCnLrd/03.jpg"
+           class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700">
+      <img src="https://i.postimg.cc/bJV0DxKD/05.jpg"
+           class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700">          
+    <img src="https://i.postimg.cc/Fz2jG9Fh/06.jpg"
+           class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700">
+    <img src="https://i.postimg.cc/CLqC5fJ5/07.jpg"
+           class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700">
+    <img src="https://i.postimg.cc/dVc2ytSB/08.jpg"
+           class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700">
+    <img src="https://i.postimg.cc/nhKvYbyt/09.jpg"
+           class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700">
+    <img src="https://i.postimg.cc/7LVnD89N/01.jpg"
+           class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700">
+    <img src="https://i.postimg.cc/502q27kW/02.jpg"
+           class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700">
+    </div>
+
+    <!-- Overlay de conteúdo -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent p-6 flex flex-col justify-end
+                opacity-0 group-hover:opacity-100 transition-opacity duration-500">      <h3 class="text-2xl font-bold mb-2 text-white">Identidade Visual</h3>
+      <p class="text-gray-300 mb-4">Criação de marca completa para startup de tecnologia.</p>
+      <div class="flex space-x-3">
+        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-white">Illustrator</span>
+        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-white">Photoshop</span>
+      </div>
+    </div>
+  </div>
+</div>
+                
+              <!-- Projeto 3: Slide Automático -->
+<div class="project-card relative rounded-xl overflow-hidden group w-full h-64">
+  <div class="relative w-full h-full">
+    <div id="carousel-images3" class="w-full h-full relative">
+      <img src="https://i.postimg.cc/wBCySW8k/Identidade-visual-com-presen-a-e-sofistica-o-Projeto-desenvolvido-para-a-Lopes-Macedo-Empreendi.jpg"
+           class="w-full h-full object-cover absolute inset-0 opacity-100 transition-opacity duration-700">
+      <img src="https://i.postimg.cc/RFw69cvx/Identidade-visual-com-presen-a-e-sofistica-o-Projeto-desenvolvido-para-a-Lopes-Macedo-Empreendi-1.jpg"
+           class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700">
+      <img src="https://i.postimg.cc/qqLN64tm/Identidade-visual-com-presen-a-e-sofistica-o-Projeto-desenvolvido-para-a-Lopes-Macedo-Empreendi-2.jpg"
+           class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700">          
+    <img src="https://i.postimg.cc/j2KWjLjw/Identidade-visual-com-presen-a-e-sofistica-o-Projeto-desenvolvido-para-a-Lopes-Macedo-Empreendi-3.jpg"
+           class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700">
+    <img src="https://i.postimg.cc/8CJfK235/Identidade-visual-com-presen-a-e-sofistica-o-Projeto-desenvolvido-para-a-Lopes-Macedo-Empreendi-4.jpg"
+           class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700">
+    </div>
+
+    <!-- Overlay de conteúdo -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent p-6 flex flex-col justify-end
+                opacity-0 group-hover:opacity-100 transition-opacity duration-500">      <h3 class="text-2xl font-bold mb-2 text-white">Identidade Visual</h3>
+      <p class="text-gray-300 mb-4">Criação de marca completa para startup de tecnologia.</p>
+      <div class="flex space-x-3">
+        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-white">Illustrator</span>
+        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-white">Photoshop</span>
+      </div>
+    </div>
+  </div>
+</div>
+                
+                <!-- Projeto 5 -->
+                <div class="project-card relative rounded-xl overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c811329a78f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="UI/UX Design" class="w-full h-64 object-cover">
+                    <div class="project-overlay absolute inset-0 bg-gradient-to-t from-black/90 to-transparent p-6 flex flex-col justify-end">
+                        <h3 class="text-2xl font-bold mb-2">Interface Digital</h3>
+                        <p class="text-gray-300 mb-4">Design de interface para aplicativo mobile.</p>
+                        <div class="flex space-x-3">
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Figma</span>
+                            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">ProtoPie</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projeto 6 -->
+                <div class="project-card relative rounded-xl overflow-hidden group">
+                    <div class="w-full h-64 bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center">
+                        <i class="fas fa-plus text-4xl text-white"></i>
+                    </div>
+                    <div class="project-overlay absolute inset-0 bg-gradient-to-t from-black/90 to-transparent p-6 flex flex-col justify-end">
+                        <h3 class="text-2xl font-bold mb-2">Seu Projeto Aqui</h3>
+                        <p class="text-gray-300 mb-4">Vamos criar algo incrível juntos!</p>
+                        <a href="#contact" class="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full text-sm font-medium inline-block w-fit">Fale Comigo</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-gray-700 rounded-full text-lg font-medium hover:bg-gray-800/50 transition group">
+                    Ver Todos os Projetos
+                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="about" class="py-20 bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 relative">
+                    <div class="relative rounded-2xl overflow-hidden">
+                        <img src="https://i.postimg.cc/x8R23d3z/PERFIL-PROFISSIONAL.png" alt="Designer" class="w-full h-auto rounded-2xl">
+                        <div class="absolute -bottom-6 -right-6 bg-gradient-to-r from-blue-500 to-purple-600 p-4 rounded-2xl shadow-xl floating">
+                            <div class="bg-gray-900 p-3 rounded-xl">
+                                <p class="text-sm font-bold">+10 ANOS</p>
+                                <p class="text-xs text-gray-400">de experiência</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 mt-10 lg:mt-0">
+                    <h2 class="text-4xl font-bold mb-6">SOBRE <span class="text-gradient">MIM</span></h2>
+                    <p class="text-lg text-gray-300 mb-6">Sou um profissional apaixonado por motion design e design gráfico, com mais de 10 anos de experiência criando soluções visuais impactantes para marcas e empresas.</p>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4">Minhas Habilidades</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center mr-3">
+                                    <i class="fas fa-film text-blue-400"></i>
+                                </div>
+                                <span>After Effects</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center mr-3">
+                                    <i class="fas fa-cube text-purple-400"></i>
+                                </div>
+                                <span>Cinema 4D</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center mr-3">
+                                    <i class="fas fa-paint-brush text-indigo-400"></i>
+                                </div>
+                                <span>Illustrator</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center mr-3">
+                                    <i class="fas fa-paint-brush text-indigo-400"></i>
+                                </div>
+                                <span>Photoshop</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center mr-3">
+                                    <i class="fas fa-cubes text-red-400"></i>
+                                </div>
+                                <span>Premiere</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-indigo-500/20 rounded-lg flex items-center justify-center mr-3">
+                                    <i class="fas fa-paint-brush text-indigo-400"></i>
+                                </div>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full font-medium hover:opacity-90 transition">Início</a>
+                        <a href="#contact" class="px-6 py-3 border border-gray-600 rounded-full font-medium hover:bg-gray-800/50 transition">Contato</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Serviços -->
+    <section id="services" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">MEUS <span class="text-gradient">SERVIÇOS</span></h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">Ofereço soluções criativas e personalizadas para atender às necessidades do seu projeto.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-800/50 rounded-xl p-8 hover:bg-gray-800/70 transition border border-gray-800 hover:border-gray-700">
+                    <div class="w-14 h-14 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-film text-2xl text-blue-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Motion Design</h3>
+                    <p class="text-gray-400">Criação de animações e motion graphics para vídeos corporativos, publicitários e redes sociais.</p>
+                </div>
+                
+                <div class="bg-gray-800/50 rounded-xl p-8 hover:bg-gray-800/70 transition border border-gray-800 hover:border-gray-700">
+                    <div class="w-14 h-14 bg-purple-500/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-cube text-2xl text-purple-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Animação 3D</h3>
+                    <p class="text-gray-400">Modelagem, renderização e animação de objetos e cenários em três dimensões.</p>
+                </div>
+                
+                <div class="bg-gray-800/50 rounded-xl p-8 hover:bg-gray-800/70 transition border border-gray-800 hover:border-gray-700">
+                    <div class="w-14 h-14 bg-green-500/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-paint-brush text-2xl text-green-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Design Gráfico</h3>
+                    <p class="text-gray-400">Criação de identidade visual, materiais gráficos e peças para mídias digitais e impressas.</p>
+                </div>
+                
+                <div class="bg-gray-800/50 rounded-xl p-8 hover:bg-gray-800/70 transition border border-gray-800 hover:border-gray-700">
+                    <div class="w-14 h-14 bg-yellow-500/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-ad text-2xl text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Edição de Vídeo</h3>
+                    <p class="text-gray-400">Montagem, tratamento e finalização de vídeos para diversos fins e plataformas.</p>
+                </div>
+                
+                <div class="bg-gray-800/50 rounded-xl p-8 hover:bg-gray-800/70 transition border border-gray-800 hover:border-gray-700">
+                    <div class="w-14 h-14 bg-red-500/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-2xl text-red-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">UI/UX Design</h3>
+                    <p class="text-gray-400">Design de interfaces e experiências de usuário para aplicativos e plataformas digitais.</p>
+                </div>
+                
+                <div class="bg-gray-800/50 rounded-xl p-8 hover:bg-gray-800/70 transition border border-gray-800 hover:border-gray-700">
+                    <div class="w-14 h-14 bg-indigo-500/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-lightbulb text-2xl text-indigo-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Consultoria Criativa</h3>
+                    <p class="text-gray-400">Orientação e desenvolvimento de estratégias visuais para sua marca ou projeto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Depoimentos -->
+    <section class="py-20 bg-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">O QUE DIZEM <span class="text-gradient">SOBRE MIM</span></h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">Feedback de clientes e parceiros que já trabalharam comigo.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-800/50 rounded-xl p-8 border border-gray-800">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Cliente" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Ana Carolina</h4>
+                            <p class="text-sm text-gray-400">Diretora de Marketing</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">"O trabalho entregue superou todas as expectativas. As animações criadas trouxeram vida à nossa campanha e aumentaram significativamente nosso engajamento."</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800/50 rounded-xl p-8 border border-gray-800">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Ricardo Almeida</h4>
+                            <p class="text-sm text-gray-400">CEO - TechStart</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">"A identidade visual criada capturou perfeitamente a essência da nossa marca. Profissionalismo e criatividade em todos os detalhes do projeto."</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800/50 rounded-xl p-8 border border-gray-800">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Juliana Santos</h4>
+                            <p class="text-sm text-gray-400">Produtora de Conteúdo</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">"Trabalhar com ele foi uma experiência incrível. Entregas dentro do prazo, atenção aos detalhes e um olhar criativo que agregou muito valor ao nosso projeto."</p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star-half-alt text-yellow-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section id="contact" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <h2 class="text-4xl font-bold mb-6">VAMOS <span class="text-gradient">TRABALHAR JUNTOS</span></h2>
+                    <p class="text-lg text-gray-300 mb-8">Tem um projeto em mente ou quer saber mais sobre meus serviços? Entre em contato e vamos conversar sobre como posso ajudar a tornar sua visão realidade.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-envelope text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Email</h4>
+                                <a href="mailto:contato@portfolio.com" class="text-gray-400 hover:text-blue-400 transition">ataliasoliveira37@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-phone-alt text-purple-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Telefone</h4>
+                                <a href="tel:+5511999999999" class="text-gray-400 hover:text-blue-400 transition">+55 (99) 98469-1168</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-green-500/10 rounded-lg flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-map-marker-alt text-green-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Localização</h4>
+                                <p class="text-gray-400">Barra do Corda - MA, Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="font-bold mb-4">Redes Sociais</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition">
+                                <i class="fab fa-behance"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-600 transition">
+                                <i class="fab fa-dribbble"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-400 transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-500 transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <form class="bg-gray-800/50 rounded-xl p-8 border border-gray-800">
+                        <div class="mb-6">
+                            <label for="name" class="block text-sm font-medium mb-2">Seu Nome</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Como posso te chamar?">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-sm font-medium mb-2">Seu Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Seu melhor email">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block text-sm font-medium mb-2">Assunto</label>
+                            <select id="subject" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="">Selecione um assunto</option>
+                                <option value="motion">Motion Design</option>
+                                <option value="graphic">Design Gráfico</option>
+                                <option value="3d">Animação 3D</option>
+                                <option value="other">Outro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-sm font-medium mb-2">Sua Mensagem</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Conte-me sobre seu projeto..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full font-medium hover:opacity-90 transition">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <span class="text-xl font-bold text-gradient">PORTFÓLIO</span>
+                    <p class="text-gray-400 mt-2">Transformando ideias em experiências visuais impressionantes.</p>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex space-x-6 mb-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition">
+                            <i class="fab fa-behance"></i>
+                        </a>
+                        <a href="https://info.loami.shop" class="text-gray-400 hover:text-pink-600 transition">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/loami.psd/" class="text-gray-400 hover:text-purple-600 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@ataliasloami" class="text-gray-400 hover:text-red-500 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <p class="text-sm text-gray-500">© 2023 Portfólio de Motion Design. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão de voltar ao topo -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-gray-800/80 backdrop-blur-md rounded-full flex items-center justify-center border border-gray-700 hover:bg-blue-600 transition opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+
+    
+        // Menu mobile toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling para links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.getElementById('mobile-menu').classList.add('hidden');
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Cursor personalizado
+        const cursor = document.getElementById('custom-cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+        
+        // Efeito hover nos links para o cursor
+        const hoverElements = document.querySelectorAll('a, button, .project-card');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('scale-150');
+                cursor.classList.add('bg-opacity-30');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('scale-150');
+                cursor.classList.remove('bg-opacity-30');
+            });
+        });
+        
+        // Botão voltar ao topo
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Efeito de digitação no hero
+        const heroTitle = document.querySelector('.hero-title');
+        if(heroTitle) {
+            const text = heroTitle.textContent;
+            heroTitle.textContent = '';
+            
+            let i = 0;
+            const typingEffect = setInterval(() => {
+                if(i < text.length) {
+                    heroTitle.textContent += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(typingEffect);
+                }
+            }, 100);
+        }
+        
+        // Animação ao rolar
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.project-card, .service-card, .testimonial').forEach(card => {
+            observer.observe(card);
+        });
+
+
+function iniciarCarousel(id) {
+  const container = document.getElementById(id);
+  const imagens = container.querySelectorAll('img');
+  let indice = 0;
+
+  setInterval(() => {
+    imagens.forEach((img, i) => {
+      img.style.opacity = i === indice ? '1' : '0';
+    });
+    indice = (indice + 1) % imagens.length;
+  }, 3000);
+}
+
+iniciarCarousel('carousel-images');
+iniciarCarousel('carousel-images2');
+iniciarCarousel('carousel-images3');
+    </script>
+</body>
+</html>

@@ -43,6 +43,29 @@
             background: rgba(0, 0, 0, 0.5);
             transition: all 0.3s ease;
         }
+
+    .pulse-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+    transform: skewX(-20deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -75%;
+    }
+    100% {
+        left: 125%;
+    }
+}
+
+
         
         .link-card:hover::before {
             background: rgba(0, 0, 0, 0.3);
@@ -138,6 +161,14 @@
             
             <!-- Links Section -->
             <div class="grid gap-4">
+
+                <a href="portfolio.html" class="link-card pulse-button h-20 rounded-xl flex items-center justify-center font-semibold text-lg" target="_blank">
+                    <span class="flex items-center space-x-2">
+                        <i class="fas fa-images text-blue-400"></i>
+                        <span>PORTFÓLIO</span>
+                    </span>
+                </a>
+
                 <a href="https://wa.me/554531981832" class="link-card h-20 rounded-xl flex items-center justify-center font-semibold text-lg" style="background-image: url('./assets/fotos/bender.png');" target="_blank">
                     <span class="flex items-center space-x-2">
                         <i class="fab fa-whatsapp text-green-400"></i>
@@ -155,7 +186,7 @@
                 <a href="https://www.freepik.com/author/ataliaslo-ami" class="link-card h-20 rounded-xl flex items-center justify-center font-semibold text-lg" style="background-image: url('./assets/fotos/freepik.webp');" target="_blank">
                     <span class="flex items-center space-x-2">
                         <i class="fas fa-images text-blue-400"></i>
-                        <span>Meu Trabalho (Imagens)</span>
+                        <span>Meu Trabalho (assets)</span>
                     </span>
                 </a>
 
@@ -165,6 +196,9 @@
   </p>
   <p class="text-sm text-gray-300 mb-4">
     Crie o seu agora mesmo com um clique, sem complicação e sem expiração. Perfeito para WhatsApp, redes sociais e muito mais!
+  </p>
+  <p class="text-lg font-semibold text-white mb-2">
+ Site criado por mim. <span class="text-purple-400">É GRÁTIS!</span>
   </p>
   <a href="#" onclick="
     fetch('https://trigger.macrodroid.com/abf899bb-77cd-43ac-ae3d-0ca96aa77c94/CliqueQrCode')
